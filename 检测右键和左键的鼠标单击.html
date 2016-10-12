@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="div">123123</div>
+<input type="button" value="aaaa" class="btn">
+
+<input type="text" value="78978987" class="txt">
+</body>
+</html>
+<script src="jquery-1.7.min.js"></script>
+<script>
+    $(function () {
+        $('.btn').live('click', function (e) {
+            if (!($.browser.msie && e.button == 0) || ($.browser.msie && e.button == 1)) {
+                console.log('left')
+            } else if (e.button == 2) {
+                console.log('right')
+            }
+        })
+        var wap_val=[];
+        $('.txt').each(function(i){
+            wap_val[i] = $(this).val();
+            $(this).focus(function(){
+                if($(this).val()== wap_val[i]){
+                    $(this).val("");
+                }
+            }).blur(function(){
+                if($.trim($(this).val())==""){
+                    $(this).val(wap_val[i]);
+                }
+            })
+        })
+    })
+</script>

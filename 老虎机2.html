@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="jquery-1.7.min.js"></script>
+    <script src="jquery.slotmachine.js"></script>
+
+</head>
+<body>
+<div class="content" style="text-align: center">
+    <div style="clear:both;">
+        <p class="title">Randomize your machines: </p>
+    </div>
+    <div style="clear:both;margin-left:150px;">
+        <div id="machine1" class="slotMachine">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+        <div id="machine2" class="slotMachine">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+        <div id="machine3" class="slotMachine">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+        <div id="slotMachineButton1" class="slotMachineButton">GO!</div>
+        <div id="btn">123</div>
+    </div>
+    <div style="clear:both;margin-left:150px;">
+        <div id="machine1Result" class="slotMachine noBorder" style="text-align:left">Index: 0</div>
+        <div id="machine2Result" class="slotMachine noBorder" style="text-align:left">Index: 0</div>
+        <div id="machine3Result" class="slotMachine noBorder" style="text-align:left">Index: 0</div>
+        <div class="slotMachine noBorder"></div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var firstNum = 1;
+        var secondNum = 1;
+        var thiredNum = 1;
+        var machine1 = $("#machine1").slotMachine({
+            active: 0,//第一次加载显示第几个奖项
+            delay: 500,//速率
+            stopIndex: firstNum//中奖项
+        });
+
+        var machine2 = $("#machine2").slotMachine({
+            active: 0,
+            delay: 500,
+            stopIndex: secondNum
+        });
+
+        var machine3 = $("#machine3").slotMachine({
+            active: 0,
+            delay: 500,
+            stopIndex: thiredNum
+        });
+
+        function onComplete($el, active) {
+            switch ($el[0].id) {
+                case 'machine1':
+                    $("#machine1Result").text("Index: " + active.index);
+                    break;
+                case 'machine2':
+                    $("#machine2Result").text("Index: " + active.index);
+                    break;
+                case 'machine3':
+                    $("#machine3Result").text("Index: " + active.index);
+                    break;
+            }
+        }
+
+        $("#slotMachineButton1").click(function () {
+            machine1.shuffle(3, onComplete);
+
+            setTimeout(function () {
+                machine2.shuffle(3, onComplete);
+            }, 500);
+
+            setTimeout(function () {
+                machine3.shuffle(3, onComplete);
+            }, 1000);
+
+        })
+    });
+</script>
+<div class="content" style="text-align: center;  height: 500px;">
+    <div style="clear:both">
+        <p class="title">Feel free to build your ouw casino! </p>
+    </div>
+    <div style="clear:both; margin-top: 250px;">
+        <div id="machine4" class="slotMachine" style="margin-left: -65px;">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+        <div id="machine5" class="slotMachine">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+        <div id="machine6" class="slotMachine">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+        <div class="content" style="padding-left:500px; margin-top:-60px">
+            <div id="slotMachineButtonShuffle" class="slotMachineButton" style="font-size: 25px">Shuffle!</div>
+            <div id="slotMachineButtonStop" class="slotMachineButton" style="font-size: 25px">Stop!</div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var machine4 = $('#machine4').slotMachine({
+            active: 0,
+            delay: 500,
+            stopIndex: 1
+        })
+        var machine5 = $('#machine5').slotMachine({
+            active: 0,
+            delay: 500,
+            stopIndex: 1
+        })
+        var machine6 = $('#machine6').slotMachine({
+            active: 0,
+            delay: 500,
+            stopIndex: 1
+        })
+        $('#slotMachineButtonShuffle').click(function () {
+            machine4.shuffle();
+            machine5.shuffle();
+            machine6.shuffle();
+        })
+        $('#slotMachineButtonStop').click(function () {
+            if (machine4.isRunning()) {
+                machine4.stop(true)
+            } else {
+                if (machine5.isRunning()) {
+                    machine5.stop(true)
+                } else {
+                    if (machine6.isRunning()) {
+                        machine6.stop(true)
+                    }
+                }
+            }
+        })
+    })
+
+
+</script>
+</body>
+</html>
+
