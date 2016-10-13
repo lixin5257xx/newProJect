@@ -1,0 +1,82 @@
+.tab-btn{
+    height: 52px;
+    line-height: 52px;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    box-pack: justify;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 20;
+}
+.tab-btn li{
+    text-align: center;
+    color: #7b7a87;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    font-size: .28rem;
+    height: 40px;
+}
+.tab-btn li a{
+    color: #7b7a87;
+    line-height: 25px;
+}
+.tab-btn li a.selected{
+    display: inline-block;
+    color: #c59721;
+    border-bottom: 2px solid #c59721;
+}
+.coupon-list{
+    margin-top: 30px;
+}
+.coupon-list >div {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+.coupon-list >div img{
+    border-radius:10px 10px 0 0;
+}
+.coupon-list >div p{
+    font-size: .18rem;
+    color: #7a7b87;
+    margin-top: 8px;
+}
+.coupon-list >div section{
+    border-radius: 10px;
+    border:1px solid #d8d8d8;
+    padding:5px 12px;
+    margin-top: -7px;
+}
+.overdue{
+    width:151px;
+    height:151px;
+    top:0;
+    right:-50px;
+}
+.overdue img{
+    width:75px;
+    height:75px;
+}
+.gray {
+    -webkit-filter: grayscale(90%);
+    -moz-filter: grayscale(90%);
+    -ms-filter: grayscale(90%);
+    -o-filter: grayscale(90%);
+    filter: grayscale(90%);
+    filter: gray;
+}
+.no-content{
+    margin-top: 35%;
+}
+.no-content img{
+    display: block;
+    width:80px;
+    height:80px;
+}
+.no-content p{
+    padding-bottom: 20px;
+    font-size: 14px;
+}
