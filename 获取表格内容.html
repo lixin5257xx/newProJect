@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        table{
+            margin: 30px;
+            border-collapse:collapse;
+            text-align: center;
+        }
+        table tr:first-child{
+            background: #999;
+        }
+        table tr td{
+            height: 40px;
+            border:1px solid #999999;
+        }
+        table tr td:nth-child(1){
+            width:100px ;
+        }
+        table tr td:nth-child(2){
+            width: 200px;
+        }
+        table tr td:nth-child(3){
+            width: 400px;
+        }
+        table tr td:nth-child(3) span{
+            float: left;
+            width: 50px;
+            display: block;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 class="table">
+    <tr>
+        <td>序号</td>
+        <td>病害名称</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>棉花黄萎病</td>
+        <td><span>编辑</span><span>删除</span></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>棉花枯萎病</td>
+        <td><span>编辑</span><span>删除</span></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>棉花立枯病</td>
+        <td><span>编辑</span><span>删除</span></td>
+    </tr>
+</table>
+
+</body>
+</html>
+<script src="jquery-1.7.min.js"></script>
+<script>
+    $(function(){
+        var arr = [];
+       $('.table tr').each(function(){
+           arr.push($(this).find('td').eq(1).text());
+       })
+        arr.shift()
+       alert(arr);
+    })
+</script>

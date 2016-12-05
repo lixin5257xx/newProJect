@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        .figcaption{width: 200px; line-height: 18px;}
+    </style>
+</head>
+<body>
+
+<div class="figcaption">
+     <p>减肥了扩大上浪费据了解拉了了看风景了到健身房拉近了看</p>
+</div>
+
+<div class="figcaption">
+     <p>减肥了扩大上浪费据了解拉近了到健身房来决定萨菲隆见识到了了看风景了到健身房拉近了</p>
+</div>
+</body>
+<script src="jquery-1.7.min.js"></script>
+<script>
+    overflowEllipsis()
+    function overflowEllipsis(){
+        $(".figcaption").each(function(){
+            var pHeight = Number($(this).find('p').height());
+            if(pHeight>54){
+                $(this).css('height','60px');
+                var divH = $(this).height();
+                var $p = $(this).find('p').eq(0);
+                while ($p.outerHeight() > divH) {
+                    $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+                };
+            }
+        })
+    }
+
+</script>
+</html>

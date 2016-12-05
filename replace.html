@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="input">
+</body>
+</html>
+<script src="jquery-1.7.min.js"></script>
+<script>
+    $('#input').keypress(function (e) {
+
+        var valLength = $(this).val().length;
+        console.log(valLength)
+        if (!(e.keyCode >= 48 && e.keyCode <= 57)) {
+            $(this).val($(this).val().slice(0, valLength-1));
+        }
+    })
+</script>

@@ -12,16 +12,68 @@
 
 </script>
 <script>
-    
-	$.extend({
-		min:function(a,b){
-			return a<b?a:b;
-		},
-		max:function(a,b){
-			return a>b?a:b;	
-		}
-	})
-	console.log(	$.min(2,3));
-	console.log(	$.max(4,5));
 
+    $.extend({
+        min: function (a, b) {
+            return a < b ? a : b;
+        },
+        max: function (a, b) {
+            return a > b ? a : b;
+        }
+    })
+    var o = {
+        abc: 123
+    }
+    //    console.log($.min(2, 3));
+    //    console.log($.max(4, 5));
+    //    var a = 2;
+    ////    console.log(Boolean(0))
+    //    console.log(--a);
+    //    console.log(a)
+    //    if (true && !--a) {
+    //        console.log(1)
+    //
+    //    }
+    //    console.log($.isEmptyObject(o))
+    console.log($.parseJSON('{"test":"123"}'))
+
+    $.each(function (object, callback, args) {
+        var name, i = 0,
+                length = object.length,
+                isObj = length === undefined || jQuery.isFunction(object);
+        if (args) {
+            if (isObj) {
+                for (name in object) {
+                    if (callback.apply(object[name], args) === false) {
+                        break;
+                    }
+                }
+            } else {
+                for (; i < length;) {
+
+                }
+            }
+        }
+    })
+    //    $.trim('  alfksjdlasjd  ')
+    console.log(' 12 3  '.length)
+    console.log(' 12 3  '.trim())
+    var first = [1, 2, 3, 5];
+    var second = [7, 33, 22]
+    console.log($.merge(first,second))
+    var abc = {
+        'c':function(){
+            alert(1)
+        }
+    }
+    abc['c']()
+ /*   proxy(abc,'c')
+function proxy (fn,context){
+    var tmp = fn[context] //tem = function(){alert(1)}
+    context = fn; //context = {}
+    fn = tmp;  // abc = function(){alert(1)}
+}*/
+
+    var a = 2;
+    console.log(!!a)
 </script>

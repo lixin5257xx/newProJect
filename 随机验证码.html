@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid #333;
+            padding: 30px;
+        }
+
+        .txt {
+            height: 45px;
+            line-height: 45px;
+            width: 200px;
+            text-align: center;
+            border: 1px solid #dedede;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .btn {
+            height: 45px;
+            line-height: 45px;
+            border: 1px solid #dedede;
+            background: #c90000;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            width: 100px;
+            cursor: pointer;;
+        }
+
+        #random {
+            width: 200px;
+            height: 45px;
+            background: #000000;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 45px;
+            text-align: center;
+            margin-top: 30px
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="text" class="txt">
+    <input type="button" class="btn" value="确定" id="sure">
+
+    <p id="msg"></p>
+
+    <p id="random"></p>
+    <input type="button" class="btn" value="重置" onclick="reload()">
+</div>
+
+</body>
+</html>
+<script src="jquery-1.7.min.js"></script>
+<script>
+    reload(4, '#random')
+    sure('#sure', '.txt', '#random', '#msg')
+
+    function reload(num, name) {
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        var num;//产生几位随机数
+        var str = '';
+        for (var i = 0; i < num; i++) {
+            var ranNum = Math.floor(Math.random() * 36);
+            str += arr.slice(ranNum, ranNum + 1).join('');
+        }
+        $(name).html(str);
+    }
+    function sure(btnName, txtName, ranName, outPutName) {
+        $(btnName).click(function () {
+            var txtVal = $(txtName).val();
+            var msg = $(ranName).text();
+            if (txtVal == msg) {
+                $(outPutName).text('验证码正确')
+            } else {
+                $(outPutName).text('验证码错误')
+                reload()
+            }
+        })
+    }
+</script>

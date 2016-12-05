@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <style>
+        b, blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            display: block;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        body {
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("img/alertBg.png") no-repeat center 0;
+            background-size: cover
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .selling {
+            margin-bottom: 0.2rem;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        .selling h5 {
+            color: #333333;
+            font-family: "Microsoft Yahei";
+            font-size: 0.3rem;
+            height: 0.4rem;
+            line-height: 0.4rem;
+            padding: 0.25rem 0;
+            width: 100%;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .selling h5 span {
+            width: 0.06rem;
+            height: 0.4rem;
+            background: #f0423d;
+            float: left;
+            margin-right: 0.15rem;
+        }
+
+        .goods-list {
+
+            overflow-x: auto;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .goods-list ul:after {
+            clear: both;
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .goods-list ul li {
+            float: left;
+            margin: 0.1rem;
+        }
+
+        .goods-list ul li img {
+            width: 2.1rem;
+            height: 2.1rem;
+        }
+
+        .goods-list ul li > p:nth-of-type(1) {
+            color: #333333;
+            font-size: 0.26rem;
+            font-family: "Microsoft Yahei";
+            line-height: 0.35rem;
+            margin-top: 0.15rem;
+            width: 2.1rem;
+        }
+
+        .goods-list ul li p:nth-of-type(2) {
+            float: left;
+            font-size: 0.28rem;
+            color: #ff9933;
+            font-family: "Microsoft Yahei";
+            font-weight: bold;
+            line-height: 0.3rem;
+        }
+
+        .priceBuy-box {
+            margin-top: 0.1rem;
+        }
+
+        .priceBuy-box:after {
+            clear: both;
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .priceBuy-box p {
+            float: left;
+            font-size: 0.28rem;
+            color: #f0423d;
+            font-family: "Microsoft Yahei";
+            font-weight: bold;
+            line-height: 0.3rem;
+        }
+
+        .priceBuy-box span {
+            float: right;
+            margin-right: 0.2rem;
+        }
+
+        .goods-list ul li .priceBuy-box span img {
+            width: 0.33rem;
+            height: 0.33rem;
+        }
+    </style>
+</head>
+<body>
+<section class="selling">
+    <h5><span></span>本店热销</h5>
+
+    <div class="goods-list">
+        <ul>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+            <li>
+                <img src="img/proTmg1.jpg" class="goodsImg">
+
+                <div class="priceBuy-box">
+                    <p>￥10.00</p>
+                    <span class="JSfly"><img src="img/add-buy.png"> </span>
+                </div>
+                <p>哈尔滨腊肉</p>
+            </li>
+        </ul>
+    </div>
+</section>
+</body>
+</html>
+<script>
+    /*设置rem*/
+    var winW = document.documentElement.clientWidth;
+    var desW = 750;
+    var fontSize = 100;
+    var rem = desW / fontSize;
+    if (winW > desW) {
+        winW = desW;
+    }
+    document.documentElement.style.fontSize = winW / rem + "px";
+</script>

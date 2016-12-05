@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<select class="sel">
+    <option></option>
+</select>
+
+<select class="sel">
+    <option></option>
+</select>
+</body>
+</html>
+<script src="jquery-1.7.min.js"></script>
+<script>
+    $(function(){
+      $('.sel').each(function(){
+        $(this).find('option').eq(0).text('-')
+      })
+    })
+</script>
